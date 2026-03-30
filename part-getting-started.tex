@@ -472,7 +472,7 @@ Knowing this, Jack looks up the example bank account from his previously configu
 accounts using the \menupath{General Journal \ma Chart of Accounts} menu as
 shown in \figref{fig:bank-setup1}.
 
-\begin{figure}[h]
+\begin{figure}[hbt!]
 \includegraphics[width=\linewidth]{setup-bank-account1.png}
 \caption{Bank account setup - menu items}
 \label{fig:bank-setup1}
@@ -496,15 +496,81 @@ Jack adds the new bank accounts by doing the following:
 \secref{sec-coa-account-setup} discusses the options in detail - for now using the
 settings as configured for the sample checking account will do.
 
-\begin{figure}[h]
-        \centering
+\begin{figure}[hbt!] 
+\centering
 % \includegraphics[width=\linewidth]{setup-bank-account2.png}
-\includegraphics[width=\linewidth]{auto-screenshots/general-journal--chart-of-accounts.png}
+\includegraphics[width=\linewidth]{setup-bank-account2.png}
 \caption{Bank account setup - account setup screen}
 \label{fig:bank-setup2}
 \end{figure}
 
+\clearpage
+\section{Creating initial bank balance}
+\label{sec-initial-bank-balance}
 
+When a company is formed there is an initial investment. This varies by the type of company.
+
+Jack's company was formed as a corporation. 
+The initial purchase of the company's  common shares needs to be entered
+into the bank account\index{bank account} to establish the initial balance\index{bank account, initial balance}.
+
+To do this Jack will create a manual Journal Entry which will debit the Checking Account (1060) and credit the
+Common Shares account (3350). Jack's initial investment was \$5000.00.
+
+To do this Jack will:
+\begin{enumerate}
+\item Navigate to \menupath{General Journal \ma Journal Entry}
+\item Enter ``0001`` into the Reference field
+\item Enter ``Initial Investment`` into the Description field
+\item Select account 1060 in the first row of the Account column
+\item Select account 3360 in the second row of the Account column
+\item Enter ``5000`` under in Debit column for account 1060
+\item Enter ``5000`` under the Credit column for account 3360
+\item In the Source column for each row enter the source. This could be a check number, but our purposes we are going to enter ``EFT`` for \gls{EFT}
+\item The screen should look like the screen show in \figref{fig:bank-setup3}
+\item Click ``Update``
+\item The screen should look like the screen shown in  \figref{fig:bank-setup4}
+\item Click ``Save`` to save the transaction
+\item The screen should look like the screen shown in \figref{fig:bank-setup5}
+\item Click the ``Post`` button to approve the transaction
+\item To confirm the initial balance navigate to \menupath{General Journal \ma Reports \ma Balance Sheet}
+\item Observe the new \$5000.00 balance in the Current Assets section and the \$5000.00 balance in the 
+Share Capital section of the balance sheet report as shown in \figref{fig:bank-setup6}
+\end{enumerate}
+
+\begin{figure}[hbt!]
+	\centering
+	% \includegraphics[width=\linewidth]{setup-bank-account2.png}
+	\includegraphics[width=\linewidth]{images/initial-bank-balance.png}
+	\caption{Bank account setup - initial bank balance}
+	\label{fig:bank-setup3}
+\end{figure}
+
+\begin{figure}[hbt!]
+	\centering
+	% \includegraphics[width=\linewidth]{setup-bank-account2.png}
+	\includegraphics[width=\linewidth]{images/initial-bank-balance2.png}
+	\caption{Bank account setup - initial bank balance after update}
+	\label{fig:bank-setup4}
+\end{figure}
+
+\begin{figure}[hbt!]
+	\centering
+	% \includegraphics[width=\linewidth]{setup-bank-account2.png}
+	\includegraphics[width=\linewidth]{images/initial-bank-balance3.png}
+	\caption{Bank account setup - initial bank balance after save}
+	\label{fig:bank-setup5}
+\end{figure}
+
+\begin{figure}[hbt!]
+	\centering
+	% \includegraphics[width=\linewidth]{setup-bank-account2.png}
+	\includegraphics[width=\linewidth]{images/initial-bank-balance4.png}
+	\caption{Bank account setup - balance sheet confirmation}
+	\label{fig:bank-setup6}
+\end{figure}
+
+\clearpage
 \section{Checking and adjusting the chart of accounts}
 \label{sec-first-login-coa-check}
 
