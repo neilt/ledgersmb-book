@@ -222,7 +222,7 @@ suitable document formatter):
 	\item Post-processing the expanded output using the formatter's \texttt{postprocess}
 \end{itemize}
 
-A custom formatter needs to implement the protocol as documented at \url{https://docs.ledgersmb.org/perl-api/1.11.0/LedgerSMB/Template.pm.html#FORMATS}.
+A custom formatter needs to implement the protocol as documented at\\ \url{https://docs.ledgersmb.org/perl-api/1.11.0/LedgerSMB/Template.pm.html#FORMATS}.
 
 \section{Bank statement importers}
 \label{sec-customization-bank-importers}
@@ -236,7 +236,7 @@ LedgerSMB comes with three bank statement importers built-in:
 	\item [CSV]  File based using \gls{csv}\index{csv}
 \end{itemize}
 
-The bank statement importer is a Perl class implementing the
+The bank statement importer is a Perl class implementing the\\
 \texttt{LedgerSMB::Reconciliation::Format} role; it parses a file with bank
 transactions, extracting the fields expected by the bank reconciliation procedure:
 
@@ -264,10 +264,12 @@ importer may be necessary.
 
 The library used for sending e-mail (\texttt{Email::Sender})
 includes a wide variety of transports that can be used to configure the library to (pretend to) send
-e-mail messages.  For a list of available transports, see \url{https://metacpan.org/dist/Email-Sender}.
+e-mail messages.  For a list of available transports, see\\
+\url{https://metacpan.org/dist/Email-Sender}.
 
 Should a different delivery method be required even considering the list of available transports,
-this can be achieved by implementing a custom \texttt{Email::Sender::Transport}.
+this can be achieved by implementing a custom\\
+\texttt{Email::Sender::Transport}.
 
 \section{Sales/VAT tax calculation}
 \label{sec-customization-sales-tax}

@@ -66,7 +66,7 @@ For the time being there is a conversion step that converts the old 'ledgersmb.c
 \subsection{ledgersmb.yaml}
 \label{subsec-global-config-ledgersmb-yaml}
 
-For an example of the default, non debug \texttt{ledgersmb.yaml} \index{ledgersmb.yaml} see  \url{https://github.com/ledgersmb/LedgerSMB/blob/master/doc/conf/ledgersmb.yaml}
+For an example of the default, non debug \texttt{ledgersmb.yaml} \index{ledgersmb.yaml} see the file in the \href{https://github.com/ledgersmb/LedgerSMB/blob/master/doc/conf/ledgersmb.yaml}{Github Repository}.
 
 \subsubsection{\texttt{cookie}}
  @@@TODO
@@ -107,7 +107,9 @@ Email \index{mail} can be configured by selecting which of the three available t
         \item {\texttt{transport:host}} – The required host name of the smtp \index{SMTP} server.
         \item {\texttt{transport:port}} – The required port number of the smtp server. Note this might vary depending on whether TLS or SSL is used.
         \item {\texttt{sasl\_username:\$class}} – The required smtp server authentication method. The values can be `Authen::SASL` or `Authen::SASL::SCRAM`.
-        \item {\texttt{sasl\_username:mechanism}} –  The available mechanism are defined at \url{https://metacpan.org/dist/Authen-SASL} or \url{ https://metacpan.org/dist/Authen-SASL-SCRAM} depending on the selected `\$class`.
+        \item {\texttt{sasl\_username:mechanism}} –  The available mechanism are defined at\\
+         	\url{https://metacpan.org/dist/Authen-SASL} or \\
+         	\url{ https://metacpan.org/dist/Authen-SASL-SCRAM} depending on the selected `\$class`.
         \item {\texttt{sasl\_username:callback:user}} – The required SMTP user name.   'the-user' in the default file is a place holder and must be replaced.
         \item {\texttt{sasl\_username:callback:pass}} – The required SMTP password.  'SECURITY-FIRST' in the default file is a place holder and must be replaced.
     \end{description}
@@ -204,7 +206,7 @@ There is also an option to import a Chart of Accounts. Importing is described in
 
 The predefined \gls{CoA} files are \gls{XML} format files.
 
-LedgerSMB provides an \gls{XSD} \index{XSD}\index{CoA XSD}file, which might help in developing a custom CoA XML file,  located at \url{https://github.com/ledgersmb/LedgerSMB/blob/master/doc/company-setup/configuration.xsd}.  
+LedgerSMB provides an \gls{XSD} \index{XSD}\index{CoA XSD}file, which might help in developing a custom CoA XML file,  located in the\\ \href{https://github.com/ledgersmb/LedgerSMB/blob/master/doc/company-setup/configuration.xsd}{Github Repository doc/company-setup/configuration.xsd}.  
 
 To use a custom \gls{CoA} \gls{XML} file, it will need to be placed in the correct directory prior to running \texttt{setup.pl}. The correct directory will be one of the locale sub-directories in \texttt{locale/coa}.
 
@@ -223,7 +225,8 @@ Similar predefined Charts of Accounts are available for other countries and lang
 See \secref{subsec-create-setup-select-coa} for instructions on using these predefined accounts.
 
 The following examples use the \texttt{GeneralHierarchical.xml} account structure.
-This file can be found at \url{https://github.com/ledgersmb/LedgerSMB/blob/master/locale/coa/us/GeneralHierarchical.xml}.
+This file can be found at\\
+\href{https://github.com/ledgersmb/LedgerSMB/blob/master/locale/coa/us/GeneralHierarchical.xml}{GitHub Repository locale/coa/us/GeneralHierarchical.xml}.
 
 \subsection{Account structure}
 \label{sec-coa-accounts-structure}
