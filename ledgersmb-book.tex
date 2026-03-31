@@ -94,16 +94,20 @@
 \usepackage{makeidx}
 \makeindex
 
-% For links in the pdf table of contents
-% Not sure of the impact of this on the HTML docs
-% No color, no visible indication of the link
-\usepackage{hyperref}
+% For hyperref package
+\usepackage{xcolor}
+
+% Package hyperref colors are ignored in HTML
+% Black color means no visible indication of the link in the online PDF
+% The idea are colored links, when viewed, but printed without colors. This new experimental option
+% ‘ocgcolorlinks’ uses Optional Content Groups, a feature introduced in PDF 1.5.
+\usepackage[ocgcolorlinks]{hyperref}
 \hypersetup{
-        colorlinks,
-        citecolor=black,
-        filecolor=black,
-        linkcolor=black,
-%       urlcolor=black
+        colorlinks, % Colors instead of ugly boxes
+        citecolor=red, % citations, default green. Not used and we are not building a christmas tree
+        filecolor=red, % urls to open local files, default cyan. Not used and we are not building a christmas tree
+        linkcolor=violet, % internal links, default red, violet seems less shocking
+		urlcolor=magenta  % external hyperlinks, use default magenta
 }
 
 % glossaries must be loaded *after* hyperref
