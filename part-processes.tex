@@ -830,7 +830,11 @@ pay off invoices at a later date.
 \section{Using over payments}
 \label{sec-business-processes-payment-processing-overpayments}
 
-Currently, it is not recommended to use the over payment \index{over payment} functionality.
+Currently, it is not recommended to use the over payment functionality.
+
+The \gls{over payment}\index{over payment} functionality in \lsmbsp is used for handling customer or vendor deposits\index{deposit}, 
+prepayments\index{prepayment}, advances\index{advances}, etc.  
+Essentially any activity that results in paying too much or in advance.
 
 If over payments are used, the "stored" amounts for later use are not tracked in the normal places. Once over payments have been applied to AR/AP transactions they will be visible, and the totals will show up in balance sheets under the correct asset/liability, but running AR/AP reports for individual vendors/customers will not flag that there are over payments outstanding. The only place to find them is in the specific "Use [AR] Over payments" screen.
 

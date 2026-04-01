@@ -106,8 +106,8 @@ Using a Docker production\index{install Docker production} container is a more s
 May require an understanding of Docker container images which is available at \\
 \url{https://www.docker.com}.
 
-The authoritative installation instructions are located at \\
-\url{https://github.com/ledgersmb/ledgersmb-docker?tab=readme-ov-file#docker-compose-with-reverse-proxy}.
+The authoritative installation instructions are located in the\\
+\href{https://github.com/ledgersmb/ledgersmb-docker?tab=readme-ov-file#docker-compose-with-reverse-proxy}{Github ledgersmb-docker Repository README}.
 
 The user should review all security settings before deploying.
 
@@ -128,7 +128,7 @@ Any problems found during installation should have Github issues created at \\
 \url{https://github.com/ledgersmb/ledgersmb-installer}. 
 
 To verify which Linux systems are tested by the project see \\
-\url{https://github.com/ledgersmb/ledgersmb-installer/blob/main/.github/workflows/ci.yaml}.
+\href{https://github.com/ledgersmb/ledgersmb-installer/blob/main/.github/workflows/ci.yaml}{Github ledgersmb-installer Repository .github/workflows/ci.yaml}.
 
 \section{Manual installation}
 \label{sec-installation-manual}
@@ -153,8 +153,8 @@ This installation method is \underline{not} recommended unless developing code f
 This installation method should be considered \underline{not} secure and \underline{not} to be used for internet facing installations.
 
 The authoritative installation instructions are located at \\
-\url{https://github.com/ledgersmb/ledgersmb-dev-docker/blob/master/README.md}.
-    
+\href{https://github.com/ledgersmb/ledgersmb-dev-docker/blob/master/README.md}{Github ledgersmb-dev-docker Repository README}.
+
 \section{Linux distribution}
 \label{sec-installation-linux-distribution}
 
@@ -321,8 +321,10 @@ The upgrade procedure when using dump and restore with a local LSMB native or do
         Then make sure it is complete by logging into the temporary LedgerSMB installation and inspecting reports, accounts, etc. 
         Do not proceed unless you are sure your backups can be restored completely and accurately.
     \item Create a new LedgerSMB installation with the new version PostgreSQL. 
-        The instructions for a new install are at \url{https://ledgersmb.org/installation}\index{installation}.
-    \item The next 3 restore steps, using \texttt{psql}, came from \url{https://ledgersmb.org/faq/how-do-i-restore-my-data}\index{faq database restore}\index{database restore}, which these instructions supersede. 
+        The instructions for a new install are at\\
+        \url{https://ledgersmb.org/installation}\index{installation}.
+    \item The next 3 restore steps, using \texttt{psql}, came from\\
+    \url{https://ledgersmb.org/faq/how-do-i-restore-my-data}\index{faq database restore}\index{database restore}, which these instructions supersede. 
         Other restore tools might work, but they have not been tested.
     \item Restore the "roles" backup. The \texttt{psql} syntax is:
         
@@ -357,12 +359,12 @@ The upgrade procedure when using dump and restore with a local LSMB native or do
     \item Allow users to use LSMB.
 \end{enumerate}
 
-\subsection{Notes on migration from PostgreSQL 8.3 (or earlier) to 8.4 - deprecated }
+\subsection{Migration from PostgreSQL 8.3 (or earlier) to 8.4}
 \label{subsec-migration-pre84-to84plus}
 
 \vspace{5mm}
 \begin{center}
-\large{The content of this sub-section is deprecated, unedited, and only remains for historical reference purposes.}
+\large{The content of this sub-section is \textbf{DEPRECATED}, unedited, and only remains for historical reference purposes.}
 \end{center}
 \vspace{5mm}
 
@@ -437,7 +439,7 @@ By default \texttt{LSMB\_CONFIG\_FILE} points to \texttt{/etc/ledgersmb/ledgersm
         \item[date\_format] Set the date format for the admin pages.  The default is \texttt{yyyy-mm-dd}. Unset means detected from the browser)
         \item[log\_level] Specifies the logging level to be used. This setting is ignored when the \texttt{log\_config} setting 
         is supplied and indicates an existing file. Available values are OFF, FATAL, ERROR, WARN, INFO, DEBUG, TRACE.
-        \item [log\_config] Set the name of the extended logging configuration file. This file uses the \texttt{log4j/Log::Log4perl} syntax described at \url{https://metacpan.org/pod/Log::Log4perl#Configuration-files}
+        \item [log\_config] Set the name of the extended logging configuration file. This file uses the \texttt{log4j/Log::Log4perl} syntax described at\\ \url{https://metacpan.org/pod/Log::Log4perl#Configuration-files}
         \item [dojo\_theme] This is the Dojo theme that is used by default when no other theme
         has been selected.  The default if unset is \texttt{claro}. Other values can be \texttt{nihilo}, \texttt{soria}, and \texttt{tundra}.
         \item[auth] Indicates which authentication module is to be used; default is DB, referring to LedgerSMB::Auth::DB.
@@ -538,7 +540,7 @@ Or to an Epson Printer.
 \label{subsubsec-global-config-ledgersmb-conf-database}
 
 \begin{description}
-        \item [host] Name of the host to connect to. See the documentation of the {\tt -h} command line option at 
+        \item [host] Name of the host to connect to. See the documentation of the {\tt -h} command line option at\\
         \url{https://www.postgresql.org/docs/current/static/app-psql.html}
         for more information (documentation unchanged since before 8.3, so applies to older versions as well)
         \item [port] Port number to be used to connect to. See the documentation of the {\tt -p} option at the
@@ -622,7 +624,8 @@ Copyright (c) 2011, 2012 Erik H\"ulsmann.
 
 
 This work is licensed under the Creative Commons Attribution License.
-To view a copy of this license, visit \url{https://creativecommons.org/licenses/by/3.0/}
+To view a copy of this license, visit\\
+\url{https://creativecommons.org/licenses/by/3.0/}
 or send a letter to Creative Commons, 559 Nathan Abbott Way,
 Stanford, California 94305, USA.
 
