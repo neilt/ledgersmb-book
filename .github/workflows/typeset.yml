@@ -79,7 +79,7 @@ jobs:
           path: public_html/full-book
       - name: Deploy to site
         uses: easingthemes/ssh-deploy@main
-        if: ${{ github.repository == 'ehuelsmann/ledgersmb-book' }}
+        if: ${{ github.repository == 'ledgersmb/ledgersmb-book' }}
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: "-rlgoDzvc -i"
