@@ -152,7 +152,7 @@ are not shown in case their selection lists are empty}:
 \item [Account] Account used to post discounts as calculated based on discount conditions
 \item [AR or AP] For customers, the Receivables G/L Account (AR) used to post created sales invoices on. For vendors, the Payables G/L Account (AP) used as default to post received purchase order invoices on. Only one of AP or AR is shown.
 \item [Payment] Which bank account to use when receiving or paying funds
-\item [Currency] The default currency to be used with the \gls{customer} or vendor
+\item [Currency] The default currency\index{currency} to be used with the \gls{customer} or vendor
 \item [Language] The language parameter is used to select templates for communication with the customer
 \item [Taxes] The applicable tax form for this vendor; tax forms are discussed in more detail in \secref{subsec-business-processes-accounting-reporting-tax-with-taxforms}
 \charef{cha-taxes}
@@ -1027,7 +1027,7 @@ Re-opening a period also opens all succeeding periods.
 \end{figure}
 
 Note that due to a design limitation prior to the release of LedgerSMB 1.7, 
-invoices in foreign\index{foreign currency} currencies\footnote{This pertains exclusively
+invoices in foreign\index{currency} currencies\footnote{This pertains exclusively
 	to invoices and transactions in foreign
 	currencies and has no effect in case of invoices and transactions in the default
 	currency.} can't be reversed\index{transaction reversal} on dates
