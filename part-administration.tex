@@ -441,39 +441,45 @@ allowing for a semi-automated way to convert stock from one type of inventory to
 \label{sec-coa-gifi}
 
 Next to the regular account numbering scheme, LedgerSMB supports a second
-numbering scheme: GIFI numbering. \gls{gifi}\index{gifi} is a standardized account 
-coding system used in Canada by the Canada Revenue Agency for processing
+numbering scheme: GIFI numbering. \gls{gifi}\index{gifi} is a standardized account\index{account number alternatives}
+coding system used in Canada by the Canada Revenue Agency\index{Canada Revenue Agency} for processing
 corporate Tax Returns forms. 
 
-Other countries (e.g. France) may have required numbering schemes for
-corporate accounting as well.
+Other countries (e.g. France\index{France}) may have required numbering schemes for
+corporate accounting as well and the GIFI account functionality can be used for them also.
 
-If you use GIFI account numbers, each account is associated with a GIFI
-account. Multiple accounts may map to a single GIFI account.
+If you use GIFI account numbers, each \lsmbsp account is associated with a GIFI
+account. Multiple \lsmbsp accounts may map to a single GIFI account.
 
 Many General Ledger reports exist in two variants: a variant using the
 normal G/L accounts and one with the GIFI numbering scheme. In the GIFI
 variant, when a single GIFI has multiple accounts, the total reported
 under GIFI is the sum of the mapped accounts.
 
+The GIFI reporting variant only shows if GIFI accounts are defined. 
 
 \subsection{Maintaining GIFI}
 \label{subsec-coa-gifi-maintenance}
 
-GIFI accounts should be created before being assigned to a standard G/L account. GIFI accounts
-can be maintained through the \menupath{General Journal \ma Chart of accounts \ma GIFI} and List GIFI menu items. Existing accounts can be edited by selecting them from the List GIFI menu, which opens a page where individual GIFI items can have their number or
-description adjusted.
+GIFI accounts must be created before being assigned to the \lsmbsp G/L account. 
+GIFI accounts can be maintained by navigating to
+ \menupath{General Journal \ma Chart of accounts \ma GIFI}.
+
+\lsmbsp G/L accounts can be assigned to GIFI accounts by selecting the \lsmbsp G/L account in the "Chart of Accounts" view
+and updating the drop down.
+Keep in mind that \lsmbsp G/L account headings cannot be assigned to GIFI accounts.
+
 
 \section{Reporting}
 \label{sec-coa-reporting}
 
-As for the general journal being presented in the "ordered by account" and "ordered by date": these are both in the "General Journal > Search" menu. 
+As for the general journal being presented in the "ordered by account" and "ordered by date": these are both in the \menupath{General Journal \ma Search} menu. 
 
 Once you run the report, you can sort the lines by date (journal) or by account (which I believe is sorted by date within the account).
 My accountant either lists "all transactions for one specific account" or "all transactions for 202x; all accounts"
 so usually, sorting by date isn't much of an issue.
 
-I believe that in the "General Journal > Search" search options, you may need to check the "Account" indicator to add the account to the output. This comes in handy when you decide not to filter for a specific account.
+I believe that in the \menupath{General Journal \ma Search} search options, you may need to check the "Account" indicator to add the account to the output. This comes in handy when you decide not to filter for a specific account.
 
 @@@ Needs Editing
 
