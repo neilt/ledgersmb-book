@@ -440,34 +440,40 @@ allowing for a semi-automated way to convert stock from one type of inventory to
 \section{Alternative accounts (GIFI)}
 \label{sec-coa-gifi}
 
-Next to the regular account numbering scheme, LedgerSMB supports a second
-numbering scheme: GIFI numbering. \gls{gifi}\index{gifi} is a standardized account\index{account number alternatives}
+Next to the regular \lsmbsp G/L account numbering scheme, LedgerSMB supports a second
+numbering scheme:  \gls{gifi} numbering. \gls{gifi}\index{gifi} is a standardized account\index{account number alternatives}
 coding system used in Canada by the Canada Revenue Agency\index{Canada Revenue Agency} for processing
 corporate Tax Returns forms. 
 
 Other countries (e.g. France\index{France}) may have required numbering schemes for
 corporate accounting as well and the GIFI account functionality can be used for them also.
 
-If you use GIFI account numbers, each \lsmbsp account is associated with a GIFI
-account. Multiple \lsmbsp accounts may map to a single GIFI account.
+If you use GIFI account numbers, each \lsmbsp G/L account is associated with a GIFI account. 
+Multiple G/L accounts may map to a single GIFI account.
+Note that the hierarchy for G/L accounts is completely separate from GIFI accounts.
 
-Many General Ledger reports exist in two variants: a variant using the
-normal G/L accounts and one with the GIFI numbering scheme. In the GIFI
-variant, when a single GIFI has multiple accounts, the total reported
-under GIFI is the sum of the mapped accounts.
+General Ledger reports may exist in two variants: a variant using the
+normal G/L accounts and one with the GIFI numbering. 
+In the GIFI variant, when a single GIFI account is mapped to multiple \lsmbsp accounts, the total reported
+under GIFI is the sum of the mapped G/L accounts.
 
 The GIFI reporting variant only shows if GIFI accounts are defined. 
 
 \subsection{Maintaining GIFI}
 \label{subsec-coa-gifi-maintenance}
 
-GIFI accounts must be created before being assigned to the \lsmbsp G/L account. 
-GIFI accounts can be maintained by navigating to
- \menupath{General Journal \ma Chart of accounts \ma GIFI}.
+GIFI accounts must be created before they can be assigned to the \lsmbsp G/L account.
+Some predefined Chart of Accounts define GIFI accounts and map the association of GIFI to G/L accounts.
 
-\lsmbsp G/L accounts can be assigned to GIFI accounts by selecting the \lsmbsp G/L account in the "Chart of Accounts" view
-and updating the drop down.
-Keep in mind that \lsmbsp G/L account headings cannot be assigned to GIFI accounts.
+GIFI accounts can be reviewed, lightly edited, entered or imported by navigating to \menupath{General Journal \ma GIFI}.
+
+Once GIFI accounts are defined the account number cannot be changed.  However, the GIFI description can be changed any time.
+Be aware that changing this description will effect reports generated on historical data prior to this change.
+
+\lsmbsp G/L accounts can be assigned to GIFI accounts by navigating to \menupath{General Journal \ma Chart of Accounts} and
+selecting a G/L account. In the resulting view, the Configuration section shows the GIFI dropdown.
+
+G/L account headings cannot be assigned to GIFI accounts.
 
 
 \section{Reporting}
