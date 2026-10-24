@@ -428,6 +428,11 @@ In order to do so, Jack navigates to \menupath{System \ma Defaults} and sees the
         \label{fig:first-user-system-defaults}
 \end{figure}
 
+Note that when changing the company name, address, tax numbers, business numbers, etc. the new value will be used for both printing new forms (invoices, purchase orders, etc.) and for re-printing old forms.\textbf{}
+
+The password duration \index{passord duration} can be set to a maximum of \texttt{3654} days (10 years). 
+While this does not comply directly with NIST \index{NIST} standards that no longer recommend regular password rotation it is pretty close.
+
 Jack sets the following defaults:
 \begin{longtable}{ llp{6cm} }
         Field & Value & Description \\ \hline
@@ -538,6 +543,8 @@ To do this Jack will:
 Share Capital section of the balance sheet report as shown in \figref{fig:bank-setup6}
 \end{enumerate}
 
+This is a standard \gls{GAAP} journal entry.  Alternatively you could, for example, credit a shareholder loan account and debit the cash account to initialize the bank balance from a shareholder loan.
+
 \begin{figure}[hbt!]
 	\centering
 	% \includegraphics[width=\linewidth]{setup-bank-account2.png}
@@ -645,17 +652,20 @@ Once set up, Jack is ready to execute the ordering process. Even though the proc
 is described here from a purchasing perspective, sales work the same way with the roles
 reversed (Jack will act as a vendor in the sales process).
 
-To start his purchase, Jack creates a \gls{rfq} document which
-he sends one or multiple vendors to let them know he's interested in their products.
+To start his purchase, Jack decides to create a \gls{rfq} document which
+he sends one or multiple vendors to let them know he's interested in their products. 
+This is optional and not required if you business does not regularly use them.
 
-The vendor responds to Jack's request by issuing a Quotation. From a legal perspective
+The vendor may respond to Jack's request by issuing a Quotation. From a legal perspective
+and depending on jurisdiction 
 a quotation is a document which promises to deliver the requested goods or services at a
-certain rate - subject to conditions specifically mentioned. If Jack accepts the quotation
-and meets the conditions, the vendor is obligated to deliver.
+certain rate - subject to conditions specifically mentioned. If Jack accepts the quotation by 
+issuing a purchase order
+and meets the conditions, the vendor is obligated to deliver. \lsmbsp does not require a 
+Quotation to handle the purchase.
 
 In response to the quotation, Jack will place an order with the vendor to indicate
-acceptance of the quotation (or he can let the
-it expire). When he places the order, that legally means he agrees to the terms
+acceptance of the quotation. When he places the order, that legally means he agrees to the terms
 and conditions in the quotation. If the vendor delivers the goods or services as per the
 order, Jack has accepted the legal obligation to pay.
 
@@ -663,9 +673,11 @@ The vendor responds to the order by shipping the goods and services as well
 as sending an invoice. The invoice legally means the vendor considers to have a claim on the assets
 of Jack's company. Jack creates a vendor invoice in his system to record the claim on his
 company by the vendor and the vendor creates a sales invoice in their system to do the same.
+The invoice is the only document actually required by \lsmb.
 
 As a result of the above it's considered bad practice to delete or change invoices once
-created. The accepted process to adjust invoices is to generate a debit invoice (for purchases)
+created. In fact, \lsmbsp does not allow this.
+The accepted process, which \lsmbsp enforces, is to adjust invoices is to generate a debit invoice (for purchases)
 or a credit invoice (for sales) to ``undo'' the effects of the invoice and letting the other party
 know about it. Then a new invoice can be generated with the appropriate content. However,
 when the order process is correctly followed from order to invoice chances of sending the wrong
@@ -706,7 +718,12 @@ Sell price &  \texttt{175.00}\\
 
 After entering the data Jack clicks \texttt{Save}.
 
-He decides not to include make/model information, drawings or images yet and since
+Sell price does not have to entered on the part. 
+\lsmbsp has a function called a "Price matrix" which allows customer specific prices, or customer group prices.
+You can also define discounts to be applied to the generic price. 
+The price can always be entered on the invoice as well.
+
+Jack decides not to include make/model information, drawings or images yet and since
 he hasn't entered vendors or customers\index{customer} in his system yet, he decides to leave
 those sections blank as well.
 
