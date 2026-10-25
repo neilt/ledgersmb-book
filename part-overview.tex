@@ -345,7 +345,7 @@ In addition to the parts mentioned above the following terms are used throughout
         money and all the liabilities paid off.
         \item [Revenue] Income from business activities.
         \item [Expense] Money paid to operate the business.
-        \item [Cost of Goods] Money that was spent to acquire material and services to build a product being sold.
+        \item [Cost of Goods] Money that was spent for material, labor, and services to build a product being sold.
         \item [Operating Expenses] Expenses that are consumed to administer the business.
         \item [Accounts Receivable] An asset on the books as a claim for a future payment
         from a customer.
@@ -397,10 +397,11 @@ There can be a number of problems with \gls{cash basis} accounting:
         \item  Because cash basis accounting isn't part of any accounting standards, there are varying expectations of what a cash balance or income statement looks like.
 \end{itemize}
 
+Jurisdiction specific tax reporting may require a choice of cash or accrual reporting, irrespective of the setup of the company as a whole.
+This is handled in \lsmbsp using the 'Tax Form' \index{tax form} functionality.  Where each tax form can be configured for cash or accrual.
+
 \section{Valuation of inventory}
 \label{sec-accounting-valuation-inventory}
-
-@@@ TODO Need why is this important paragraph?
 
 The cost of inventory, in theory, includes all costs incurred to acquire the goods and make 
 them ready for sale. This theoretical cost may include shipping costs, discounts, insurance, 
@@ -414,7 +415,7 @@ is no easy way to allocate the costs to the inventory, or they are relatively co
 Inventory valuation must consider in the following situations:
 \begin{itemize}
         \item When the valuation of inventory varies from purchase to purchase. The costing method
-        determines the valuation.  This situation is automatically handled in LedgerSMB using one of the
+        determines the valuation.  This situation is automatically handled in LedgerSMB using the \gls{FIFO}
         inventory valuation methods discussed below.
         \item When the valuation of inventory is less that what was paid for it. The inventory must
         be written down. This is usually a manual calculation that is the result of damage, obsolescence, 
@@ -428,12 +429,15 @@ There are several general automated inventory valuation methods including the fo
 \begin{itemize}
         \item Specific Identification -- Each specific inventory item has its cost tracked individually. 
         This method is usually used for large and expensive items that can be tracked by 
-        serial number or identification tag. 
+        serial number \index{serial number} or  identification tag \index{identification tag}. 
         Typically, the specific identification inventory valuation method results an inventory valuation
         close to value of using the \gls{FIFO} method.
+        \textbf{}
+        \lsmbsp does not currently track inventory or \gls{COGS} by serial number.  However, serialized parts can be purchased and sold. 
+        
         \item \gls{FIFO} -- This method is similar to selling the oldest product first merchandising policy.
         In the \gls{FIFO} method the lastest costs are included in inventory cost and the older costs
-        are charged back to \gls{COGS}.
+        are charged back to \gls{COGS}.  This is how \lsmbsp currently handles COGS.
 
         \gls{FIFO} is the preferred method for maintaining accurate historical costs and is less 
         susceptible to income manipulation by the timing of new purchases. Typically \gls{FIFO}
@@ -443,9 +447,7 @@ There are several general automated inventory valuation methods including the fo
         In LedgerSMB the inventory cost is tracked on a \gls{FIFO} basis. When a part is purchased, 
         its cost is added to the inventory asset account. When the part is sold, the cost of the item
         is moved to the cost of goods sold account.\\
-        @@@TODO Is this paragraph redundant?\\
-        @@@TODO  What sold cost is used; oldest, newest, average?\\
-        @@@TODO How is the inventory asset account debited?
+
         \item \gls{LIFO} --  Under \gls{LIFO} the costs of the last goods purchased are charged
         against revenues as the \gls{COGS} and the inventory is composed of the costs
         of the oldest goods acquired.
@@ -453,11 +455,13 @@ There are several general automated inventory valuation methods including the fo
         \gls{LIFO} is preferred when prices are rising as it typically results in reducing net income and
         thereby reducing taxes. However, \gls{LIFO} allows manipulation of income by simply changing the time
         at which additional purchases are made and does not represent accurate historical costs. 
-        Typically \gls{LIFO} results in the lowest inventory value.
+        Typically \gls{LIFO} results in the lowest inventory value. \lsmbsp does not currently handle this 
+        inventory cost method.
         
         \item Weighted Average -- Under the weighted average method, the total number of units 
         purchased plus those on-hand at the beginning of the period is divided by the total costs
-        of purchases plus the cost of the beginning inventory.
+        of purchases plus the cost of the beginning inventory. \lsmbsp does not currently handle this 
+        inventory cost method.
         
         Typically the weighted average inventory valuation method results in 
         an inventory value between \gls{FIFO}, which is the highest,
