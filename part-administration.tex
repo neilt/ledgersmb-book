@@ -121,14 +121,19 @@ Go to the \menupath{System \ma Users}. You'll be presented the page as shown in 
 \label{fig:create-user-step1}
 
 The value entered in the 'Username' field will cause a database user by that name
-to be created. Database users are a global resource, meaning that a collision will
-occur if multiple people try to define the same user in multiple companies.
+to be created. 
+
+Note that database users are a global resource, meaning that a collision will
+occur if different people try to define the same user in multiple companies.
+It is perfectly acceptable for the same user to have access to multiple companies (databases).
 \secref{sec-user-imports} describes how to use the same user across multiple companies.
 
 Enter the password to be used for this user into the ``Password'' field. If you're
 importing a user, please leave the field empty -- that will prevent the password
-from being changed.  Note that initial passwords \index{password} (and password resets) are only 
-valid for one day unless the user logs in and changes his/her password.
+from being changed.  
+
+Note that initial passwords \index{password} (and password resets) are only 
+valid for 24 hours from creation unless the user logs in and changes his/her password.
 
 The ``Import'' field is discussed in \secref{sec-user-imports}. To create a new
 user, leave the setting at ``No''.
@@ -286,7 +291,7 @@ Every part requires the following fields to be entered:
 \item [Income account] The P\&L (income) account to post the sales revenues on
 \item [COGS account] The P\&L (expense) Cost of Goods Sold (COGS) account to use
         to post cost of sold items on
-\item [Sell price] The default selling price used on sales invoices
+\item [Sell price] The sell price for a given part. This price is shown, by default, when this part is selected on sales invoice.  It can be overridden if necessary
 \end{description}
 
 
@@ -349,8 +354,8 @@ purchased, with purchasing information for the given vendor:
 \subsubsection{Customer information}
 \label{subsubsec-parts-customer-information}
 
-The customer information section specifies sell prices per customer or price group
-where those are required to deviate from the default sell price. This mechanism exists
+The customer information section specifies optional sell prices per customer or price group
+where those are required to deviate from the default sell price set on the part. This mechanism exists
 to support the marketing principle of categorizing customers.
 
 \begin{description}
@@ -580,15 +585,15 @@ LedgerSMB side-by-side with the simple rule.
 \section{Tax forms}
 \label{sec-tax-taxforms}
 
-The tax forms facility exists to help file sales tax forms. It's primarily modeled
-after the 1099 US tax reporting forms functionality, which means that it's cash based.
-The fact that it's cash based means that invoices will be included in the tax report
-as soon as cash for the invoice is received. Accrual based reporting means that the
-tax is reported based on the invoice date instead of the payment date.
+The tax forms facility exists to help file required government tax forms. It's primarily modeled
+after the 1099 US tax reporting forms functionality.
 
-This system can only be used in some EU countries and by some companies at that: the
-country needs to allow cash based reporting and the company needs to have filed
-for cash based reporting as well.
+Each tax form can be separately configured to report cash or accrual basis separately from
+the base company configuration.
+
+Cash based \index{cash basis} reporting means that invoices will be included in the tax report
+as soon as cash for the invoice is received. Accrual based \index{accrual basis} reporting means that the
+tax is reported based on the invoice date instead of the payment date.
 
 Before using this functionality be sure to check with an accountant or the tax
 authorities if cash based reporting is appropriate.
@@ -609,7 +614,7 @@ Using tax forms requires that:
 linked to a tax form. \secref{subsec-business-processes-customers-creating-account} describes how to do this.
 \end{itemize}
 
-When associations have been set up between companies and
+When associations have been set up between companies, either customer or vendor, and
 tax forms, the ``Tax form'' check mark can be used in invoices to include
 (or exclude) invoice lines from the tax form. See \secref{subsec-business-processes-invoicing-manual-entry-invoices}
 for entry of invoices.
