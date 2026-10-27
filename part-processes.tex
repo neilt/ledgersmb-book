@@ -996,60 +996,56 @@ One example of a case like that is the calculation, and posting of
 corporate taxes presumably at the end of each accounting period but at least
 at the end of the book year.
 
-% @@@ screenshot
-
 
 \section{Bank reconciliation}
 \label{sec-business-processes-accounting-reconciliation}
 
-\subsection{Importing bank transactions - OFX}
+The reconciliation report at \menupath{Cash \& Banking \ma Reconciliation} is used to reconcile bank statements.
+
+@@@TODO
+
+@@@TODO need screenshot
+
+\subsection{Reconciliation import}
+\label{subsec-business-processes-accounting-reconciliation}
+
+The available formats for importing bank statements are:
+\begin{enumerate}
+\item OFX Bank statement\index{OFX Bank statements}
+\item ISO 20022 - CAMT.053 (Customer statement)\index{ISO 20022}\index{CAMT.053}
+\item PayPal (CSV / Column names)\index{PayPal import}\index{import CSV},
+\item PayPal (CSV / Column numbers - no headings).
+\end{enumerate}
+
+\subsubsection{Importing bank transactions - OFX}
 \label{subsec-importing-bank-transactions-ofx}
 
-@@@ TODO - Quick capture of chat info, needs to be revised and maybe moved to customization chapter.
+An example of this format can be found on Github at
+\href{https://github.com/ledgersmb/LedgerSMB/blob/master/t/data/inout_tests/ofx_bank_statement.xml}{ofx\_bank\_statement.xml}
 
-\subsection{Importing bank transactions - CAMT.053}
+\subsubsection{Importing bank transactions - CAMT.053}
 \label{subsec-importing-bank-transactions-camt}
 
-@@@ TODO - Quick capture of chat info, needs to be revised and maybe moved to customization chapter.
+An example of this format can be found on Github at \href{https://github.com/ledgersmb/LedgerSMB/blob/master/t/data/inout_tests/campt053-sample.xml}{campt053-sample.xml}
 
-\subsection{Importing bank transactions - CSV}
+\subsubsection{Importing bank transactions - CSV}
 \label{subsec-importing-bank-transactions-csv}
 
-\menupath{Cash \& Banking \ma Reconciliation}
-
-@@@ TODO - This subsection needs to be revised and maybe moved to customization chapter as it is no longer accurate.
-
-% like \url{https://github.com/ledgersmb/LedgerSMB/blob/master/doc/reconciliation/recon_csv.pl}
-
-Custom formats can be handled by creating an import file.
-
-The file should reside in \texttt{LedgerSMB/Reconciliation/CSV/Formats/}
-
-A perl \texttt{sub} must exist which is named:
-
+The default CSV with header format is:
 \begin{verbatim}
-parse_<name-of-your-company-database>_<id-of-account-to-reconcile>
+	cleared_date,amount,scn,type
+	2021-09-01,25.25,224435,CHECK
+	2021-09-01,-30.31,44351,CHECK
+	2021-09-02,100,,
+	2021-09-02,-425,3321435,
 \end{verbatim}
 
-With a company database name of \texttt{testdb} and an account id of \texttt{255} the parse code might look like the following:
+Where the \texttt{scn} column represents the Source Coding Number.
 
-\begin{verbatim}
-sub parse_testdb_255 {
-    parse_n(@_);
-}
-\end{verbatim}
+\subsubsection{Custom import formats}
+\label{subsec-importing-bank-transactions-custom}
 
-% reference to https://github.com/ledgersmb/LedgerSMB/blob/master/doc/reconciliation/recon_csv.pl#L72
-default format is:
-\begin{verbatim}
-cleared_date,amount,scn,type
-2021-09-01,25.25,224435,CHECK
-2021-09-01,-30.31,44351,CHECK
-2021-09-02,100,,
-2021-09-02,-425,3321435,
-\end{verbatim}
-
-scn = Source Coding Number
+It is also possible to create custom import \index{import format custom} formats.  Please check with the developers for assistance.
 
 \section{Period closing}
 \label{sec-business-processes-accounting-period-closing}
