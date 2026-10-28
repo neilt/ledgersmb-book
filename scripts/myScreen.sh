@@ -1,0 +1,1 @@
+PGHOSTADDR='192.168.1.218' PGPORT='5001' PGDATABASE='example_inc' PGUSER='postgres' PGPASSWORD='abc' LSMB_ADMIN_USERNAME='jack' LSMB_ADMIN_PASSWORD='asdfghjkl' LSMB_BASE_URL='http://vmware-lsmb-jack-dev:5000'  perl get-screen-shots.pl --login system--defaults.png
