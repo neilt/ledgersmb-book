@@ -4,36 +4,7 @@ Collected notes about development in this repository.
 
 ## Local Test Environment
 
-Using `ubuntu-22.04.3-live-server-amd64.iso` as the base run the following:
-
-```bash 
-#!/bin/bash
-set -e
-set -x
-
-# Setup Ubuntu to make LSMB Book 
-sudo apt update
-sudo apt -y upgrade
-
-# From the book github action, which should always be consulted for changes.
-# https://github.com/ledgersmb/ledgersmb-book/blob/master/.github/workflows/typeset.yml
-sudo apt-get install -y gcc make cpanminus libxslt1-dev libxml-libxml-perl 
-sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended libxml-perl latexml
-sudo cpanm --notest LaTeXML
-
-# For local-build.sh
-sudo apt-get install -y latexmk
-
-# For `gather-db-info.pl`
-sudo apt-get install -y libdbi-perl libdbd-pg-perl 
-
-# For `get-screen-shots.pl`
-sudo apt-get install -y libtest-www-selenium-perl
-
-git clone https://github.com/neilt/ledgersmb-book.git
-				
-sudo shutdown -r now
-```
+Using ubuntu 26.04.1 LTS Desktop
 
 ## Experimenting with alternative converters to HTML
 
