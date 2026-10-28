@@ -28,7 +28,7 @@ use strict;
 use Time::HiRes;
 
 # use Data::Dumper;
-use Diagnostics;
+use diagnostics;
 use Carp 'verbose'; # 'verbose'
 $SIG{ __DIE__ } = \&Carp::croak;
 
@@ -116,12 +116,12 @@ sub print_help {    # TODO move to Pod::Usage
     print "  * At least one of --setup or --login must be specified. Normally both are.\n";
     print "  * Must start with a clean LSMB installation: no companies and no users that match the environment variables.\n";
     print "Example Usage:\n";
-    print "  PGHOSTADDR='172.16.1.218' PGPORT='5001' PGDATABASE='example_inc' PGUSER='postgres' PGPASSWORD='abc' \\\n";
-    print "  LSMB_ADMIN_USERNAME='admin' LSMB_ADMIN_PASSWORD='asdfg' LSMB_BASE_URL='http://vmwareledgerdev.local:5000'\\\n";
+    print "  PGHOSTADDR='192.168.1.218' PGPORT='5001' PGDATABASE='example_inc' PGUSER='postgres' PGPASSWORD='abc' \\\n";
+    print "  LSMB_ADMIN_USERNAME='jack' LSMB_ADMIN_PASSWORD='asdfghjkl' LSMB_BASE_URL='http://vmware-lsmb-jack-dev:5000'\\\n";
     # use perl here because /usr/bin/perl is not the correct perl for my use.
     print "  perl get-screen-shots.pl --login system--defaults.png\n\n"; 
-    print "  PGHOSTADDR='172.16.1.218' PGPORT='5001' PGDATABASE='example_inc' PGUSER='postgres' PGPASSWORD='abc' \\\n";
-    print "  LSMB_ADMIN_USERNAME='admin' LSMB_ADMIN_PASSWORD='asdfg' LSMB_BASE_URL='http://vmwareledgerdev.local:5000' \\\n";
+    print "  PGHOSTADDR='192.168.1.218' PGPORT='5001' PGDATABASE='example_inc' PGUSER='postgres' PGPASSWORD='abc' \\\n";
+    print "  LSMB_ADMIN_USERNAME='jack' LSMB_ADMIN_PASSWORD='asdfghjkl' LSMB_BASE_URL='http://http://vmware-lsmb-jack-dev:5000' \\\n";
     # use perl here because /usr/bin/perl is not the correct perl for my use.
     print "  perl get-screen-shots.pl --setup --login\n\n";              
 }
